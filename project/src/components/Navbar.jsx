@@ -12,6 +12,7 @@ export const Navbar = ({ currentPage, onNavigate }) => {
     { label: 'Dashboard', value: 'dashboard' },
     { label: 'Features', value: 'features' },
     { label: 'Gallery', value: 'gallery' },
+    { label: 'Manual', value: 'manual' },
   ];
 
   return (

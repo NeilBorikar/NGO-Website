@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage';
 import { DashboardPage } from './pages/DashboardPage';
 import { FeaturesPage } from './pages/FeaturesPage';
 import { GalleryPage } from './pages/GalleryPage';
+import { UserManualPage } from './pages/UserManualPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -19,6 +20,8 @@ function App() {
         return <FeaturesPage />;
       case 'gallery':
         return <GalleryPage />;
+      case 'manual':
+        return <UserManualPage />;
       default:
         return <HomePage />;
     }
