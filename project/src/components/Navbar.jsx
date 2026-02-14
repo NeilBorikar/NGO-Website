@@ -1,18 +1,20 @@
 import { motion } from 'framer-motion';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 
 export const Navbar = ({ currentPage, onNavigate }) => {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { label: 'Home', value: 'home' },
-    { label: 'Dashboard', value: 'dashboard' },
-    { label: 'Features', value: 'features' },
-    { label: 'Gallery', value: 'gallery' },
-    { label: 'Manual', value: 'manual' },
+    { label: 'Home', path: '/', value: 'home' },
+    { label: 'Dashboard', path: '/dashboard', value: 'dashboard' },
+    { label: 'Features', path: '/features', value: 'features' },
+    { label: 'Gallery', path: '/gallery', value: 'gallery' },
+    { label: 'Manual', path: '/user-manual', value: 'manual' },
   ];
 
   return (
@@ -28,7 +30,8 @@ export const Navbar = ({ currentPage, onNavigate }) => {
           <motion.div
             className="flex items-center gap-2 cursor-pointer"
             whileHover={{ scale: 1.05 }}
-            onClick={() => onNavigate('home')}
+            as={Link}
+            to="/"
           >
             
             <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
@@ -38,26 +41,30 @@ export const Navbar = ({ currentPage, onNavigate }) => {
 
           <div className="hidden md:flex items-center gap-8 ml-4">
             {navItems.map((item) => (
-              <motion.button
+              <Link
                 key={item.value}
-                onClick={() => onNavigate(item.value)}
+                to={item.path}
                 className={`relative px-3 py-2 text-sm font-medium transition-colors focus-glow rounded-lg ${
-                  currentPage === item.value
+                  location.pathname === item.path
                     ? 'text-[rgb(var(--accent-color))]'
                     : 'text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--text-primary))]'
                 }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
-                {item.label}
-                {currentPage === item.value && (
-                  <motion.div
-                    layoutId="navbar-indicator"
-                    className="absolute inset-0 bg-[rgba(var(--accent-color),0.1)] rounded-lg -z-10"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </motion.button>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full"
+                >
+                  {item.label}
+                  {location.pathname === item.path && (
+                    <motion.div
+                      layoutId="navbar-indicator"
+                      className="absolute inset-0 bg-[rgba(var(--accent-color),0.1)] rounded-lg -z-10"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </motion.div>
+              </Link>
             ))}
           </div>
 
@@ -103,21 +110,20 @@ export const Navbar = ({ currentPage, onNavigate }) => {
         >
           <div className="px-4 py-4 space-y-2 max-h-[60vh] overflow-auto">
             {navItems.map((item) => (
-              <motion.button
+              <Link
                 key={item.value}
-                onClick={() => {
-                  onNavigate(item.value);
-                  setIsMenuOpen(false);
-                }}
+                to={item.path}
+                onClick={() => setIsMenuOpen(false)}
                 className={`block w-full text-left px-4 py-3 rounded-xl transition-colors ${
-                  currentPage === item.value
+                  location.pathname === item.path
                     ? 'bg-[rgba(var(--accent-color),0.1)] text-[rgb(var(--accent-color))]'
                     : 'text-[rgb(var(--text-secondary))] hover:bg-[rgba(var(--bg-tertiary),0.5)]'
                 }`}
-                whileTap={{ scale: 0.98 }}
               >
-                {item.label}
-              </motion.button>
+                <motion.div whileTap={{ scale: 0.98 }}>
+                  {item.label}
+                </motion.div>
+              </Link>
             ))}
           </div>
         </motion.div>
