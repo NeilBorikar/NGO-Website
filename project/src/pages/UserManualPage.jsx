@@ -9,7 +9,7 @@ export const UserManualPage = () => {
       title: 'NGO',
       description: 'Learn the basics of managing your NGO account',
       content: [
-        { subtitle: 'Create Account', link: '#create-account' },
+        { subtitle: 'View Events', link: '#view-events' },
         { subtitle: 'Add Events', link: '#add-events' },
         { subtitle: 'Mark/View Attendance', link: '#mark-view-attendance' },
       ],
@@ -155,16 +155,19 @@ export const UserManualPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
-              id="create-account"
+              id="view-events"
             >
               <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
-                Create Account
+                View Events
               </h3>
               <p className="text-[rgb(var(--text-secondary))] mb-4">
-                Visit the homepage and click "Sign Up". Fill in your organization details, email, and password. You'll receive a verification email.
+                Visit the homepage and click your NGO name . Fill in your organization details, email and password. 
               </p>
               <p className="text-[rgb(var(--text-secondary))]">
-                After verification, you can start inviting volunteers to your organization.
+                After login, all the events will be displayed on the screen, click any event to view the details.
+              </p>
+              <p className="text-[rgb(var(--text-secondary))]">
+                click Export Excel button on the top of the screen to download an excel report of the event's attendance.
               </p>
             </motion.div>
 
@@ -175,19 +178,20 @@ export const UserManualPage = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
-              id="login-security"
+              id="add-events"
             >
               <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
-                Login & Security
+                Add Events
               </h3>
               <p className="text-[rgb(var(--text-secondary))] mb-4">
-                Always use a strong password with a mix of uppercase, lowercase, numbers, and special characters.
+                Click on New button at the top right.and a new event has to be registered at least a day before the event date. Fill in the event details:
               </p>
               <ul className="list-disc list-inside text-[rgb(var(--text-secondary))] space-y-2">
-                <li>Enable two-factor authentication for extra security</li>
-                <li>Never share your login credentials</li>
-                <li>Log out from shared devices</li>
-                <li>Update your password regularly</li>
+                <li>add location</li>
+                <li>add Aim</li>
+                <li>add Description</li>
+                <li>add images if any</li>
+                <li>add event date</li>
               </ul>
             </motion.div>
 
@@ -198,20 +202,21 @@ export const UserManualPage = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
-              id="register-volunteers"
+              id="mark-view-attendance"
             >
               <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
-                Register Volunteers
+                Mark/View Attendance
               </h3>
               <p className="text-[rgb(var(--text-secondary))] mb-4">
-                In the Dashboard, navigate to "Volunteers" and click "Add Volunteer". Fill in their details:
+                In the Dashboard, after clicking on the event, click on the Mark Attendance button to view attendance click the view attendance button:
               </p>
+              
               <ul className="list-disc list-inside text-[rgb(var(--text-secondary))] space-y-2">
-                <li>Full Name</li>
-                <li>Email Address</li>
-                <li>Phone Number</li>
-                <li>Skills & Interests</li>
-                <li>Availability</li>
+                <li>select college</li>
+                <li>click dropdown to select the class</li>
+                <li>click present/absent button</li>
+                <li>double check the attendance</li>
+                <li>click submit on the pop up message</li>
               </ul>
             </motion.div>
 

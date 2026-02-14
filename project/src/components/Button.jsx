@@ -12,9 +12,9 @@ export const Button = ({
   const baseClasses = 'font-semibold rounded-2xl transition-all focus-glow relative overflow-hidden';
 
   const variants = {
-    primary: 'bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 shadow-lg hover:shadow-xl',
+    primary: 'bg-gradient-to-r from-amber-400 via-orange-300 to-rose-300 text-white hover:from-amber-500 hover:via-orange-400 hover:to-rose-400 shadow-lg hover:shadow-2xl',
     secondary: 'glass text-[rgb(var(--text-primary))] hover:bg-[rgba(var(--glass-bg),0.9)] border-[rgba(var(--border-color),0.3)]',
-    destructive: 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 shadow-lg hover:shadow-xl',
+    destructive: 'bg-gradient-to-r from-rose-400 to-pink-400 text-white hover:from-rose-500 hover:to-pink-500 shadow-lg hover:shadow-xl',
   };
 
   const sizes = {
@@ -26,7 +26,7 @@ export const Button = ({
   return (
     <motion.button
       className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
-      whileHover={disabled ? {} : { scale: 1.02 }}
+      whileHover={disabled ? {} : { scale: 1.05, y: -2 }}
       whileTap={disabled ? {} : { scale: 0.98 }}
       transition={{ type: 'spring', stiffness: 400, damping: 17 }}
       disabled={disabled}
@@ -39,12 +39,22 @@ export const Button = ({
         {children}
       </motion.span>
       {!disabled && (
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0"
-          initial={false}
-          whileHover={{ opacity: 0.2, x: ['0%', '100%'] }}
-          transition={{ duration: 0.6 }}
-        />
+        <>
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 rounded-2xl"
+            initial={false}
+            whileHover={{ opacity: 0.3, x: ['0%', '100%'] }}
+            transition={{ duration: 0.6 }}
+          />
+          <motion.div
+            className="absolute inset-0 rounded-2xl opacity-0"
+            initial={false}
+            whileHover={{ 
+              boxShadow: '0 0 30px rgba(251, 146, 60, 0.6), 0 0 60px rgba(244, 114, 182, 0.3)'
+            }}
+            transition={{ duration: 0.3 }}
+          />
+        </>
       )}
     </motion.button>
   );
