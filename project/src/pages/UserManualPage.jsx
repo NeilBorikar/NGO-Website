@@ -266,24 +266,57 @@ export const UserManualPage = () => {
               </ul>
             </motion.div>
 
-            {/* Theme Settings */}
+            {/* admin-functions */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
               className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
-              id="theme-settings"
+              id="add-ngo"
             >
               <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
-                Theme Settings
+                Add-NGO
               </h3>
               <p className="text-[rgb(var(--text-secondary))]">
-                Click the sun/moon icon in the navigation bar to toggle between light and dark modes. Your preference is saved automatically.
+                login using admin credentials, click on the add NGO button and fill in the NGO details to add a new NGO to the system.
               </p>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
+              id="add-college"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
+                Add-College
+              </h3>
+              <p className="text-[rgb(var(--text-secondary))]">
+                login using admin credentials, click on the add college button and fill in the college details to add a new college to the system.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
+              id="register-new-admin"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
+                Register-New-Admin
+              </h3>
+              <p className="text-[rgb(var(--text-secondary))]">
+                login using admin credentials, click on the register new admin button and fill in the admin details to register a new admin to the system.
+              </p>
+            </motion.div>
+
           </div>
-        </motion.div>
+          </motion.div>
       </section>
 
       {/* FAQ SECTION */}
