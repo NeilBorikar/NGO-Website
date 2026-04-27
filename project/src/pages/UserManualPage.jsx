@@ -19,9 +19,9 @@ export const UserManualPage = () => {
       title: 'College',
       description: 'Learn the basics of managing your College account',
       content: [
-        { subtitle: 'Register Volunteers', link: '#register-volunteers' },
-        { subtitle: 'Assign Tasks', link: '#assign-tasks' },
-        { subtitle: 'Track Attendance', link: '#track-attendance' },
+        { subtitle: 'college-login', link: '#college-login' },
+        { subtitle: 'Assign Tasks', link: '#view-student-attendance' },
+        { subtitle: 'Track Attendance', link: '#view-attended-events' },
       ],
     },
     {
@@ -169,6 +169,11 @@ export const UserManualPage = () => {
               <p className="text-[rgb(var(--text-secondary))]">
                 click Export Excel button on the top of the screen to download an excel report of the event's attendance.
               </p>
+              
+              {/* Photo Section */}
+              <div className="mt-6 rounded-lg overflow-hidden h-48">
+                <img src="/view_events.jpg" alt="View Events Screenshot" className="w-full h-full object-cover" />
+              </div>
             </motion.div>
 
             {/* Login & Security */}
@@ -193,9 +198,14 @@ export const UserManualPage = () => {
                 <li>add images if any</li>
                 <li>add event date</li>
               </ul>
+              
+              {/* Photo Section */}
+              <div className="mt-6 rounded-lg overflow-hidden h-48">
+                <img src="/add_events.jpg" alt="Add Events Screenshot" className="w-full h-full object-cover" />
+              </div>
             </motion.div>
 
-            {/* Register Volunteers */}
+            {/* Mark/View Attendance */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -218,6 +228,11 @@ export const UserManualPage = () => {
                 <li>double check the attendance</li>
                 <li>click submit on the pop up message</li>
               </ul>
+              
+              {/* Photo Section */}
+              <div className="mt-6 rounded-lg overflow-hidden h-48">
+                <img src="/register_admin.jpg" alt="Register New Admin Screenshot" className="w-full h-full object-cover" />
+              </div>
             </motion.div>
 
             {/* Track Attendance */}
@@ -241,15 +256,21 @@ export const UserManualPage = () => {
                 <li>After selecting the college, the user must enter the password.</li>
                 <li>Upon successful authentication, the respective college will be logged in.</li>
               </ul>
+              
+              {/* Photo Section */}
+              <div className="mt-6 rounded-lg overflow-hidden h-48">
+                <img src="/college_login.jpg" alt="College Login Screenshot" className="w-full h-full object-cover" />
+              </div>
             </motion.div>
 
-             <motion.div
+            {/* View Events (College) */}
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
               className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
-              id="view events"
+              id="view-attended-events"
             >
               <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
                 View Events
@@ -260,19 +281,24 @@ export const UserManualPage = () => {
               <ul className="list-disc list-inside text-[rgb(var(--text-secondary))] space-y-2">
                 <li>Displays the search bar and list of events conducted by the NGO.</li>
                 <li>Shows the list of students who attended each event.</li>
-                <li>ncludes a Download Report button to download the student attendance report in Excel format.</li>
-                <li>Upon successful authentication, the respective college will be logged in.</li>
+                <li>includes a Download Report button to download the student attendance report in Excel format.</li>
+                
               </ul>
+              
+              {/* Photo Section */}
+              <div className="mt-6 rounded-lg overflow-hidden h-48">
+                <img src="/view_events_college.jpg" alt="View Events Screenshot" className="w-full h-full object-cover" />
+              </div>
             </motion.div>
 
-            {/* View Statistics */}
+            {/* View Attendance */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
               className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
-              id="view-attendance"
+              id="view-student-attendance"
             >
               <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
                 View Attendance
@@ -293,10 +319,14 @@ export const UserManualPage = () => {
                 <li>when a particular division/class is selectedThe list of students belonging to that division is displayed.</li>
                 <li>When clicking on a specific student’s name within a division:The events attended by that student will be displayed.</li>
                 <li>A button to Export Class Data or to export data of a specific class/division is provided as well.</li>
-              </ul>
+              </ul>              
+              {/* Photo Section */}
+              <div className="mt-6 rounded-lg overflow-hidden h-48">
+                <img src="/view_attendance.jpg" alt="View Attendance Screenshot" className="w-full h-full object-cover" />
+              </div>
             </motion.div>
 
-            {/* admin-functions */}
+            {/* Admin Functions - Add NGO */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -311,8 +341,14 @@ export const UserManualPage = () => {
               <p className="text-[rgb(var(--text-secondary))]">
                 login using admin credentials, click on the add NGO button and fill in the NGO details to add a new NGO to the system.
               </p>
+              
+              {/* Photo Section */}
+              <div className="mt-6 rounded-lg overflow-hidden h-48">
+                <img src="/add_ngo.jpg" alt="Add NGO Screenshot" className="w-full h-full object-cover" />
+              </div>
             </motion.div>
 
+            {/* Admin Functions - Add College */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -327,8 +363,14 @@ export const UserManualPage = () => {
               <p className="text-[rgb(var(--text-secondary))]">
                 login using admin credentials, click on the add college button and fill in the college details to add a new college to the system.
               </p>
+              
+              {/* Photo Section */}
+              <div className="mt-6 rounded-lg overflow-hidden h-48">
+                <img src="/add_college.jpg" alt="Add College Screenshot" className="w-full h-full object-cover" />
+              </div>
             </motion.div>
 
+            {/* Admin Functions - Register New Admin */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -343,6 +385,11 @@ export const UserManualPage = () => {
               <p className="text-[rgb(var(--text-secondary))]">
                 login using admin credentials, click on the register new admin button and fill in the admin details to register a new admin to the system.
               </p>
+              
+              {/* Photo Section */}
+              <div className="mt-6 rounded-lg overflow-hidden h-48">
+                <img src="/register_admin.jpg" alt="Register New Admin Screenshot" className="w-full h-full object-cover" />
+              </div>
             </motion.div>
 
           </div>
