@@ -13,7 +13,7 @@ export const Navbar = ({ currentPage, onNavigate }) => {
     { label: 'Home', path: '/', value: 'home' },
     { label: 'Dashboard', path: '/dashboard', value: 'dashboard' },
     { label: 'Features', path: '/features', value: 'features' },
-    { label: 'Gallery', path: '/gallery', value: 'gallery' },
+    { label: 'Delete Account', path: '/delete-account', value: 'delete-account' },
     { label: 'Manual', path: '/user-manual', value: 'manual' },
   ];
 

@@ -4,7 +4,7 @@ import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { DashboardPage } from './pages/DashboardPage';
 import { FeaturesPage } from './pages/FeaturesPage';
-import { GalleryPage } from './pages/GalleryPage';
+import { DeleteAccountPage } from './pages/DeleteAccountPage';
 import { UserManualPage } from './pages/UserManualPage';
 
 function AppContent() {
@@ -18,8 +18,8 @@ function AppContent() {
         return 'dashboard';
       case '/features':
         return 'features';
-      case '/gallery':
-        return 'gallery';
+      case '/delete-account':
+        return 'delete-account';
       case '/user-manual':
         return 'manual';
       default:
@@ -35,7 +35,7 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/features" element={<FeaturesPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/delete-account" element={<DeleteAccountPage />} />
           <Route path="/user-manual" element={<UserManualPage />} />
         </Routes>
       </main>
