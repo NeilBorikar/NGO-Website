@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Download, Heart, Mail, MapPin, Phone } from 'lucide-react';
+import { Download, Heart, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from './Button';
 
 export const Footer = () => {
@@ -91,12 +92,24 @@ export const Footer = () => {
 
         <div className="border-t border-[rgba(var(--border-color),0.2)] pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* <p className="text-[rgb(var(--text-tertiary))] text-sm flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-red-500" /> for a better world
-            </p> */}
             <p className="text-[rgb(var(--text-tertiary))] text-sm">
-              © 2026 NGO App. All rights reserved.
+              © 2026 MarkIn NGO Attendance App. All rights reserved.
             </p>
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-[rgb(var(--text-secondary))]">
+              <Link to="/privacy-policy" className="hover:text-[rgb(var(--text-primary))] transition-colors flex items-center gap-1">
+                <ShieldCheck className="w-3.5 h-3.5 text-green-500" />
+                Privacy Policy
+              </Link>
+              <Link to="/delete-account" className="hover:text-[rgb(var(--text-primary))] transition-colors">
+                Delete Account
+              </Link>
+              <Link to="/user-manual" className="hover:text-[rgb(var(--text-primary))] transition-colors">
+                User Manual
+              </Link>
+              <Link to="/features" className="hover:text-[rgb(var(--text-primary))] transition-colors">
+                Features
+              </Link>
+            </div>
           </div>
         </div>
       </div>

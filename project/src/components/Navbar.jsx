@@ -15,6 +15,7 @@ export const Navbar = ({ currentPage, onNavigate }) => {
     { label: 'Features', path: '/features', value: 'features' },
     { label: 'Delete Account', path: '/delete-account', value: 'delete-account' },
     { label: 'Manual', path: '/user-manual', value: 'manual' },
+    { label: 'Privacy Policy', path: '/privacy-policy', value: 'privacy-policy' },
   ];
 
   return (

@@ -6,6 +6,7 @@ import { DashboardPage } from './pages/DashboardPage';
 import { FeaturesPage } from './pages/FeaturesPage';
 import { DeleteAccountPage } from './pages/DeleteAccountPage';
 import { UserManualPage } from './pages/UserManualPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 
 function AppContent() {
   const location = useLocation();
@@ -22,6 +23,8 @@ function AppContent() {
         return 'delete-account';
       case '/user-manual':
         return 'manual';
+      case '/privacy-policy':
+        return 'privacy-policy';
       default:
         return 'home';
     }
@@ -37,6 +40,7 @@ function AppContent() {
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/delete-account" element={<DeleteAccountPage />} />
           <Route path="/user-manual" element={<UserManualPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         </Routes>
       </main>
       <Footer />
