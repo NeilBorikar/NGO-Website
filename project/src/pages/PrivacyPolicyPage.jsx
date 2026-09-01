@@ -7,15 +7,14 @@ import {
   FolderOpen,
   Bell,
   UserCheck,
-  FileCheck2,
+  FileText,
   Share2,
   ShieldAlert,
-  UserCheck2,
   Edit3,
   Trash2,
   RefreshCw,
   Mail,
-  CheckCircle2,
+  CheckCircle,
   ChevronRight,
   Info,
   Clock,
@@ -131,7 +130,7 @@ export const PrivacyPolicyPage = () => {
             <span>Effective Date: <strong>July 1, 2026</strong></span>
           </div>
           <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg glass">
-            <CheckCircle2 className="w-4 h-4 text-green-400" />
+            <CheckCircle className="w-4 h-4 text-green-400" />
             <span>Status: <strong>Active & Compliant</strong></span>
           </div>
           <button
@@ -374,12 +373,12 @@ export const PrivacyPolicyPage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  icon: <FileCheck2 className="w-5 h-5 text-blue-400" />,
+                  icon: <FileText className="w-5 h-5 text-blue-400" />,
                   title: 'Accurate Attendance Records',
                   desc: 'To log, timestamp, and maintain tamper-proof records of student and volunteer event attendance.',
                 },
                 {
-                  icon: <UserCheck2 className="w-5 h-5 text-emerald-400" />,
+                  icon: <UserCheck className="w-5 h-5 text-emerald-400" />,
                   title: 'Identity Verification',
                   desc: 'To authenticate identities and grant appropriate role-based privileges within the NGO ecosystem.',
                 },
@@ -434,7 +433,7 @@ export const PrivacyPolicyPage = () => {
 
             <div className="p-5 rounded-2xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 mb-5">
               <div className="flex items-center gap-2.5 text-blue-500 font-bold text-base mb-2">
-                <CheckCircle2 className="w-5 h-5 text-green-500" />
+                <CheckCircle className="w-5 h-5 text-green-500" />
                 Zero Commercial Monetization
               </div>
               <p className="text-sm text-[rgb(var(--text-secondary))] leading-relaxed">
